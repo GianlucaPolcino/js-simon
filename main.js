@@ -16,7 +16,8 @@ document.querySelector('.stamp').innerHTML =
 `
     <h2 class="fs-1">${numbers[0]}, ${numbers[1]}, ${numbers[2]}, ${numbers[3]}, ${numbers[4]} </h2>
 
-`;
+`
+
 setTimeout(function(){
     document.querySelector('.gp-numbers').innerHTML =
     `
@@ -26,27 +27,29 @@ setTimeout(function(){
 
 setTimeout(function(){
 
-    for(let i = 0; i < 5; i++){
-        let ask = parseInt(prompt('Inserisci i numeri'));
+    for(let i = 0; i < numbers.length; i++){
+        const ask = parseInt(prompt('Inserisci i numeri'));
 
         if(numbers.includes(ask)){
             userNumbers.push(ask)
             counter++
-        } else if(userNumbers.length > 0){
-            document.querySelector('.gp-numbers').innerHTML = 
-            `
-            <h2 class="fs-1">Hai indovinato ${counter} numeri!</h2>
-            
-            `
-            setNumber(userNumbers);
-            console.log(this);
-        } else{
-            document.querySelector('.gp-numbers').innerHTML = 
-            `
-            <h2 class="fs-1">Mi dispiace, non hai indovinato neanche un numero!</h2>
-            `
         }
         
+    }
+    
+    if(userNumbers.length > 0){
+        document.querySelector('.gp-numbers').innerHTML = 
+        `
+        <h2 class="fs-1">Hai indovinato ${counter} numeri!</h2>
+        
+        `
+        setNumber(userNumbers);
+        console.log(this);
+    } else{
+        document.querySelector('.gp-numbers').innerHTML = 
+        `
+        <h2 class="fs-1">Mi dispiace, non hai indovinato neanche un numero!</h2>
+        `
     };
 
     
