@@ -2,15 +2,12 @@ const numbers = [];
 const userNumbers = [];
 let counter = 0;
 
-for(let i = 0; i < 5; i++){
-    const extracted = randomNumber(1, 100)
-
-    if(!numbers.includes(extracted)){
-        numbers.push(extracted)
-    }else{
-        i--
+while(numbers.length < 5){
+    const random = randomNumber(1, 100)
+    if(!numbers.includes(random)){
+        numbers.push(random)
     }
-};
+}
 
 document.querySelector('.stamp').innerHTML = 
 `
@@ -40,7 +37,7 @@ setTimeout(function(){
     if(userNumbers.length > 0){
         document.querySelector('.gp-numbers').innerHTML = 
         `
-        <h2 class="fs-1">Hai indovinato ${counter} numeri!</h2>
+            <h2 class="fs-1">Hai indovinato ${counter} numeri!</h2>
         
         `
         setNumber(userNumbers);
@@ -48,7 +45,7 @@ setTimeout(function(){
     } else{
         document.querySelector('.gp-numbers').innerHTML = 
         `
-        <h2 class="fs-1">Mi dispiace, non hai indovinato neanche un numero!</h2>
+            <h2 class="fs-1">Mi dispiace, non hai indovinato neanche un numero!</h2>
         `
     };
 
